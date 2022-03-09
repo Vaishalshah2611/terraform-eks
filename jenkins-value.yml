@@ -1,0 +1,24 @@
+controller:
+  image: "jenkins/jenkins"
+  tagLabel: lts
+  imagePullPolicy: "Always"
+  imagePullSecretName:
+  adminSecret: true
+  adminUser: "admin"
+  adminPassword: "vaishal123"
+  resources:
+    requests:
+      cpu: "50m"
+      memory: "256Mi"
+    limits:
+      cpu: "1000m"
+      memory: "2000Mi"
+  serviceType: NodePort
+  nodePort: 32323
+  JCasC:
+    defaultConfig: true
+  enabled: true
+persistence:
+  enabled: true
+  annotations: {}
+  size: "5Gi"
